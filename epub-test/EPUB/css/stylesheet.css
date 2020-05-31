@@ -20,7 +20,11 @@
 .image {
     border: 1px solid;
 }
-div.image {
+
+iframe {
+    width: 100%;
+}
+#image {
     width: 100%;
     height: 200px;
     background-image: url('http://idpf.org/sites/default/files/epub-logo.gif');

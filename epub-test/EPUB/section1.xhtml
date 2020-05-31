@@ -6,11 +6,18 @@
 </head>
 <body>
 
+<h3>Links</h3>
+<p>External URL: <a href="https://example.com">example.com</a></p>
+<p>Data URL: <a href="data:text/html,&lt;h1&gt;Data URL&lt;/h1&gt;">data:text/html</a></p>
+<p>JavaScript URL: <a href="javascript:alert('Alert!')">alert()</a></p>
+
 <h3>External Images</h3>
 <p>Image:</p>
 <img class="image" src="http://idpf.org/sites/default/files/epub-logo.gif" alt="EPUB Logo" />
 <p>CSS background-image:</p>
-<div class="image"></div>
+<div class="image" id="image"></div>
+<p>CSS (inline) background-image:</p>
+<div class="image" style="width: 100%; height: 200px; background-image: url('http://idpf.org/sites/default/files/epub-logo.gif');"></div>
 
 <h3>JavaScript</h3>
 <h4>By setting "onclick" attribute</h4>
@@ -21,20 +28,27 @@
 
 <div onclick="alert('Alert!')">alert()</div>
 
-<p>Navigation:</p>
+<p>Window:</p>
 
 <div onclick="window.location = 'https://example.com/'">window.location = 'https://example.com/'</div>
+<div onclick="window.open('https://example.com/', '_blank')">window.open('https://example.com/', '_blank')</div>
 
 <p>Requesting remote URL:</p>
 
-<div onclick="fetch('https://example.com').then(res => res.text()).then(text => document.write(text))">fetch('https://example.com/')</div>
-<div onclick="(function() { var x = new XMLHttpRequest(); x.onload = function() { document.write(x.responseText) }; x.open('GET', 'https://example.com'); x.send(); })()">XMLHttpRequest.open('GET', 'https://example.com/')</div>
+<div onclick="fetch('https://example.com').then(res => res.text()).then(text => document.documentElement.innerHTML = text)">fetch('https://example.com/')</div>
+<div onclick="(function() { var x = new XMLHttpRequest(); x.onload = function() { document.documentElement.innerHTML = x.responseText }; x.open('GET', 'https://example.com'); x.send(); })()">XMLHttpRequest.open('GET', 'https://example.com/')</div>
 
 <p>Requesting local file:</p>
 
-<div onclick="fetch('file:///etc/passwd').then(res => res.text()).then(text => document.write(text))">fetch('file:///etc/passwd')</div>
-<div onclick="(function() { var x = new XMLHttpRequest(); x.onload = function() { document.write(x.responseText) }; x.open('GET', 'file:///etc/passwd'); x.send(); })()">XMLHttpRequest.open('GET', 'file:///etc/passwd')</div>
+<div onclick="fetch('file:///etc/passwd').then(res => res.text()).then(text => document.documentElement.innerHTML = text)">fetch('file:///etc/passwd')</div>
+<div onclick="(function() { var x = new XMLHttpRequest(); x.onload = function() { document.documentElement.innerHTML = x.responseText }; x.open('GET', 'file:///etc/passwd'); x.send(); })()">XMLHttpRequest.open('GET', 'file:///etc/passwd')</div>
 </div>
+
+<h4>Inline script</h4>
+<div id="inline-js">N/A</div>
+<script>
+document.getElementById('inline-js').innerHTML = 'This message was written by an inline script'
+</script>
 
 <h3>Forms</h3>
 <form action="data:text/html,&lt;h1&gt;Data URL&lt;/h1&gt;">
@@ -44,6 +58,9 @@
 <form action="https://example.com/">
 <input type="submit" value="Submit to example.com" />
 </form>
+
+<h3>iframes</h3>
+<iframe src="https://example.com/"></iframe>
 
 </body>
 </html>
