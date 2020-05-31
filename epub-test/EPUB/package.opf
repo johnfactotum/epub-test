@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" xml:lang="en" unique-identifier="pub-id">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:title id="title">EPUB Test</dc:title>
+    <meta refines="#title" property="title-type">main</meta>
+    <dc:creator id="creator">John Factotum</dc:creator>
+    <dc:identifier id="pub-id">com.github.johnfactotum.epub-test</dc:identifier>
+    <dc:language>en</dc:language>
+  </metadata>
+  <manifest>
+    <item id="style" href="css/stylesheet.css" media-type="text/css"/>
+    <item id="section1" href="section1.xhtml" media-type="application/xhtml+xml"/>
+  </manifest>
+  <spine>
+    <itemref idref="section1" />
+  </spine>
+</package>

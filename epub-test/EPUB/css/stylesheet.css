@@ -1,0 +1,27 @@
+.js div {
+    margin: 10px 0;
+    border: 1px solid;
+    padding: 5px;
+}
+.js div[onclick]:before {
+    content: '▶️ Click to Run';
+    display: block;
+    float: right;
+    font-size: small;
+}
+.js div:not([onclick]):before {
+    content: '⚠️ Cannot Run';
+    white-space: pre;
+    display: block;
+    float: right;
+    font-size: small;
+}
+
+.image {
+    border: 1px solid;
+}
+div.image {
+    width: 100%;
+    height: 200px;
+    background-image: url('http://idpf.org/sites/default/files/epub-logo.gif');
+}

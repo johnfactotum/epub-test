@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
+</head>
+<body>
+
+<h3>External Images</h3>
+<p>Image:</p>
+<img class="image" src="http://idpf.org/sites/default/files/epub-logo.gif" alt="EPUB Logo" />
+<p>CSS background-image:</p>
+<div class="image"></div>
+
+<h3>JavaScript</h3>
+<h4>By setting "onclick" attribute</h4>
+
+<div class="js">
+
+<p>Dialogs:</p>
+
+<div onclick="alert('Alert!')">alert()</div>
+
+<p>Navigation:</p>
+
+<div onclick="window.location = 'https://example.com/'">window.location = 'https://example.com/'</div>
+
+<p>Requesting remote URL:</p>
+
+<div onclick="fetch('https://example.com').then(res => res.text()).then(text => document.write(text))">fetch('https://example.com/')</div>
+<div onclick="(function() { var x = new XMLHttpRequest(); x.onload = function() { document.write(x.responseText) }; x.open('GET', 'https://example.com'); x.send(); })()">XMLHttpRequest.open('GET', 'https://example.com/')</div>
+
+<p>Requesting local file:</p>
+
+<div onclick="fetch('file:///etc/passwd').then(res => res.text()).then(text => document.write(text))">fetch('file:///etc/passwd')</div>
+<div onclick="(function() { var x = new XMLHttpRequest(); x.onload = function() { document.write(x.responseText) }; x.open('GET', 'file:///etc/passwd'); x.send(); })()">XMLHttpRequest.open('GET', 'file:///etc/passwd')</div>
+</div>
+
+<h3>Forms</h3>
+<form action="data:text/html,&lt;h1&gt;Data URL&lt;/h1&gt;">
+<input type="submit" value="Submit to a data URL" />
+</form>
+
+<form action="https://example.com/">
+<input type="submit" value="Submit to example.com" />
+</form>
+
+</body>
+</html>
