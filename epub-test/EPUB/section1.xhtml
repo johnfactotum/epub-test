@@ -32,6 +32,9 @@
 
 <div onclick="window.location = 'https://example.com/'">window.location = 'https://example.com/'</div>
 <div onclick="window.open('https://example.com/', '_blank')">window.open('https://example.com/', '_blank')</div>
+<div onclick="window.top.location = 'https://example.com/'">window.top.location = 'https://example.com/'</div>
+<div onclick="window.frameElement.ownerDocument.defaultView.location = 'https://example.com/'">window.frameElement.ownerDocument.defaultView.location = 'https://example.com/'</div>
+<div onclick="window.top.document.documentElement.innerHTML = '&lt;img class=\'image\' src=\'http://idpf.org/sites/default/files/epub-logo.gif\' alt=\'EPUB Logo\' /&gt;'">window.top.document.documentElement.innerHTML = /* EPUB Logo */</div>
 
 <p>Requesting remote URL:</p>
 
